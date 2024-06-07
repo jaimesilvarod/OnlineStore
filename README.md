@@ -18,4 +18,7 @@ V.2
 V.2.1
 - Correcciones finales para la entrega de Herencia
 
+v.3.0
+- Entrega del proyecto con Polimorfismo, aplicado en la clase Producto con sobrecarga de constructor y en las clases de ProductoDigital y ProductoFisico, sobrecarga de métodos
+
 ![Diagrama de Clases de nuestra Online Store.](img/diagrama-clases.png)
