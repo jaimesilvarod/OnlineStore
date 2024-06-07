@@ -8,5 +8,9 @@ V.1
 - Creación de las clases Categoria, Producto, Usuario y CarritoDeCompras
 - Inclusión de atributos, constructor y métodos por clase
 
+V.2
+- Definición e instancias de objetos
+- Herencia en Usuario y Producto
+
 V 1.5
 - Creación de las clases que heredan de Producto y Usuario: ProductoDigital y ProductoFisico; y UsuarioCliente y Usuario Administrador.
