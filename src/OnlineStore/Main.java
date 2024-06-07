@@ -26,6 +26,14 @@ public class Main {
         System.out.println( "El nombre del usuario Administrador es: " + usACoach.nombre + " con el acceso: " + usACoach.getTipoAcceso());
         System.out.println( "El nombre del producto es: " + prTV.getNombre() + " descripción: " + prTV.getDescripcion() + " costo: "  + prTV.getPrecio());
 
+        ProductoDigital productoDigital = new ProductoDigital("Película", 12.34f);
+        ProductoFisico productoFisico = new ProductoFisico(4);
+
+        System.out.println("La entrega del producto digital es: " + productoDigital.getDetalles());
+        System.out.println("La entrega del producto físico es: " + productoFisico.getDetalles());
+
+        productoFisico.entrega();
+        productoDigital.entrega();
 
     }
 }

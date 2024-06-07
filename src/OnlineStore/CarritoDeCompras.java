@@ -22,6 +22,20 @@ public class CarritoDeCompras {
         System.out.println("Producto agregado: " + producto.getDetalles());
     }
 
+    public void agregarProducto(int id) {
+        Producto producto = new Producto(id);
+        productos.add(producto);
+        total += producto.getPrecio();
+        System.out.println("Producto agregado: " + producto.getDetalles());
+    }
+
+    public void agregarProducto(String Nombre, float precio) {
+        Producto producto = new Producto(Nombre, precio);
+        productos.add(producto);
+        total += producto.getPrecio();
+        System.out.println("Producto agregado: " + producto.getDetalles());
+    }
+
     public void eliminarProducto(Producto producto) {
         if (productos.remove(producto)) {
             total -= producto.getPrecio();

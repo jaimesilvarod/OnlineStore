@@ -12,6 +12,14 @@ public class ProductoDigital extends Producto {
         this.pesoMB = pesoMB;
     }
 
+    public ProductoDigital(String nombre, float precio){
+        super(nombre, precio);
+        this.formatoArchivo = "UKN";
+        this.pesoMB = 0;
+    }
+
+
+
     public String getFormatoArchivo() {
         return "Para este producto cuya descripción es: " + getDescripcion() + "el formato de archivo disponible es: " + formatoArchivo;
     }
@@ -31,6 +39,11 @@ public class ProductoDigital extends Producto {
     @Override
     public String getDetalles() {
         return "Producto Digital - Nombre: " + getNombre() + ", Descripción: " + getDescripcion() + ", Precio: " + getPrecio() + ", Formato: " + formatoArchivo + ", Peso: " + pesoMB + "MB";
+    }
+
+    @Override
+    public void entrega(){
+        System.out.println("Entrega Digital");
     }
 
 }

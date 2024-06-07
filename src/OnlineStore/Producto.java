@@ -18,10 +18,28 @@ public class Producto {
         this.stock = stock;
     }
 
+    public Producto(Producto producto) {
+        this.id = producto.id;
+        this.nombre = producto.nombre;
+        this.descripcion = producto.descripcion;
+        this.precio = producto.precio;
+        this.categoria = producto.categoria;
+        this.stock = producto.stock;
+    }
+
     public Producto(int id){
         this.nombre = "Producto sin nombre";
-        this.descripcion = "Producto sin descripción";
+        this.descripcion = "Producto solo con ID";
         this.precio = 00.00f;
+        this.categoria = setId(10);
+        this.stock = 1;
+    }
+
+    public Producto(String nombre, float precio){
+        this.id = 0;
+        this.nombre = nombre;
+        this.descripcion = "Producto con nombre y precio";
+        this.precio = precio;
         this.categoria = setId(10);
         this.stock = 1;
     }
@@ -91,9 +109,12 @@ public class Producto {
         System.out.println("Stock Actualizado");
     }
 
-    public abstract String getDetalles(){
-        this.nombre = nombre;
-        return null;
+    public String getDetalles(){
+        return "Cadena de caracteres";
+    }
+
+    public void entrega(){
+        System.out.println("Entrega de producto genérico");
     }
 
 }

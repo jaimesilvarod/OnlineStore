@@ -15,6 +15,14 @@ public class ProductoFisico extends Producto{
         this.pesoKG = pesoKG;
     }
 
+    public ProductoFisico(int id) {
+        super(id);
+        this.altoCM = 0;
+        this.largoCM = 0;
+        this.anchoCM = 0;
+        this.pesoKG = 0;
+    }
+
     public float getAltoCM() {
         return altoCM;
     }
@@ -50,5 +58,10 @@ public class ProductoFisico extends Producto{
     @Override
     public String getDetalles() {
         return "Producto Físico - Nombre: " + getNombre() + ", Descripción: " + getDescripcion() + ", Precio: " + getPrecio() + ", Dimensiones: " + altoCM + "x" + largoCM + "x" + anchoCM + "cm, Peso: " + pesoKG + "kg";
+    }
+
+    @Override
+    public void entrega(){
+        System.out.println("Entrega Física");
     }
 }
