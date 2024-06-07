@@ -35,5 +35,18 @@ public class Main {
         productoFisico.entrega();
         productoDigital.entrega();
 
+        GestorInventario inventarioDigital = new InventarioDigital(23);
+        GestorInventario inventarioFisico = new InventarioFisico(33);
+
+        inventarioDigital.anadirProducto("Suscripción curso Java", 55);
+        inventarioFisico.anadirProducto("Libro de Java", 12);
+
+        inventarioDigital.actualizarStock("Suscripción curso Java", 23);
+        inventarioFisico.actualizarStock("Libro de Java", 15);
+
+        System.out.println("El inventario Digital tiene en stock " + inventarioDigital.getCantidad() + " productos.");
+        System.out.println("El inventario Físico tiene en stock " + inventarioFisico.getCantidad() + " productos.");
+
+
     }
 }
