@@ -24,4 +24,7 @@ v.3.0
 v.4
 - Abstracción aplicada en la clase GestorInventario y creación de Clases Hijas InventarioDigital e InventarioFísico.
 
+v.5
+- Vimos la creación de interfaces pero aplicamos aún más abstracción con SistemadePago implementando 3 clases hijas, PagoTarjetaCredito, PagoTransFerenciaBancaria y PagoPayPal.
+
 ![Diagrama de Clases de nuestra Online Store.](img/diagrama-clases.png)
