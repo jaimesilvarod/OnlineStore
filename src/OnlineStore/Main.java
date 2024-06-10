@@ -13,8 +13,8 @@ public class Main {
         UsuarioAdministrador usACoach;
 
         // Inicializamos los objetos
-        ctElectrodomesticos = new Categoria(1,"Electrodomésticos", "Todos los electrodomésticos de la tienda");
-        ctTecnologia = new Categoria(2,"Tecnología", "Todos los productos de tecnología de la tienda");
+        ctElectrodomesticos = new CategoriaFisico(1,"Electrodomésticos", "Todos los electrodomésticos de la tienda");
+        ctTecnologia = new CategoriaFisico(2,"Tecnología", "Todos los productos de tecnología de la tienda");
 
         prComputadora = new Producto(1,"HP", "Computadora Gamer Envy 5",34, ctTecnologia,54);
         prTV = new Producto(2,"Televisor Panasonic", "Televisor QLED de 75 pulgadas",500, ctTecnologia,25);

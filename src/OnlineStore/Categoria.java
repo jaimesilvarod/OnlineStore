@@ -1,14 +1,14 @@
 package OnlineStore;
 
-public class Categoria {
+public abstract class Categoria {
 
-    private int id;
-    private String name;
-    private String descripcion;
+    protected int id;
+    protected String nombre;
+    protected String descripcion;
 
-    public Categoria(int id, String name, String descripcion) {
+    public Categoria(int id, String nombre, String descripcion) {
         this.id = id;
-        this.name = name;
+        this.nombre = nombre;
         this.descripcion = descripcion;
     }
 
@@ -21,11 +21,11 @@ public class Categoria {
     }
 
     public String getNombre() {
-        return name;
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDescripcion() {
@@ -35,6 +35,8 @@ public class Categoria {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public abstract void mostrarDetalles();
 
     public void agregarCategoria(){
         System.out.println("Categoría Agregada");
