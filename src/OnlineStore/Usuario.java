@@ -1,18 +1,72 @@
 package OnlineStore;
 
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
 public class Usuario {
 
-    protected int id;
-    protected String nombre;
-    protected String email;
-    protected String contrasena;
-    protected String rol;
+    private int id;
+    private String nombre;
+    private String email;
+    private String contrasena;
+    private String rol;
 
     public Usuario(int id, String nombre, String email, String contrasena, String rol) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
         this.contrasena = contrasena;
+        this.rol = rol;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        String CORREO_PERMITIDO = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]{2,})+$";
+        if(elCorreoEsValido(email, CORREO_PERMITIDO)){
+            this.email = email;
+        }else{
+            System.out.println("El formato de correo electrónico es incorrecto.");
+        }
+    }
+
+    public static boolean elCorreoEsValido(String email, String CORREO_PERMITIDO) {
+        Pattern pattern = Pattern.compile(CORREO_PERMITIDO);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
         this.rol = rol;
     }
 

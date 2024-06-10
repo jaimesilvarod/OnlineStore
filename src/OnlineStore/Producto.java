@@ -74,6 +74,9 @@ public class Producto {
     }
 
     public void setPrecio(float precio) {
+        if (precio < 0) {
+            throw new IllegalArgumentException("No se permiten precios negativos");
+        }
         this.precio = precio;
     }
 
@@ -90,6 +93,9 @@ public class Producto {
     }
 
     public void setStock(int stock) {
+        if (stock < 0) {
+            throw new IllegalArgumentException("El stock no puede ser negativo");
+        }
         this.stock = stock;
     }
 

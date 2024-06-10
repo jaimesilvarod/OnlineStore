@@ -15,12 +15,12 @@ public class UsuarioAdministrador extends Usuario {
 
         public void gestionarInventario(Producto producto) {
             // Implementar la lógica para gestionar el inventario
-            System.out.println("El administrador " + nombre + " ha gestionado el producto " + producto.getNombre());
+            System.out.println("El administrador " + getNombre() + " ha gestionado el producto " + producto.getNombre());
         }
 
         public void establecerPromocion(Producto producto, float descuento) {
             // Implementar la lógica para establecer una promoción
-            System.out.println("El administrador " + nombre + " ha establecido una promoción para el producto " + producto.getNombre() + " con un descuento del " + descuento + "%");
+            System.out.println("El administrador " + getNombre() + " ha establecido una promoción para el producto " + producto.getNombre() + " con un descuento del " + descuento + "%");
         }
 }
 

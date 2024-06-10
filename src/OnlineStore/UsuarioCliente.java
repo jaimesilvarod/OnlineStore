@@ -13,7 +13,7 @@ class UsuarioCliente extends Usuario {
 
     public void realizarCompra(Producto producto) {
         // Implementar la lógica para realizar la compra
-        System.out.println("El cliente " + nombre + " ha comprado el producto " + producto.getNombre());
+        System.out.println("El cliente " + getNombre() + " ha comprado el producto " + producto.getNombre());
         historialCompras.agregarCompra(producto);
     }
 

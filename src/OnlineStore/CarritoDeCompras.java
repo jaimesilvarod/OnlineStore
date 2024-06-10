@@ -16,6 +16,34 @@ public class CarritoDeCompras {
         this.total = total;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
+
+    public void setTotal(float total) {
+        this.total = total;
+    }
+
     public void agregarProducto(Producto producto) {
         productos.add(producto);
         total += producto.getPrecio();
