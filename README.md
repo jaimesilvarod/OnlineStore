@@ -27,4 +27,10 @@ v.4
 v.5
 - Vimos la creación de interfaces pero aplicamos aún más abstracción con SistemadePago implementando 3 clases hijas, PagoTarjetaCredito, PagoTransFerenciaBancaria y PagoPayPal.
 
+V.6 
+- Se aplican atributos privados a las clases Producto, Usuario y CarritoDeCompras, con sus setters y getters.
+- Se realiza validación anti números negativos (Producto) y de correo electrónico (Usuario).
+- Se abstrae la Clase Categoria de las clases CategoriaDigital y CategoriaFisica.
+- Se actualiza el diagrama de clases de la aplicación.
+
 ![Diagrama de Clases de nuestra Online Store.](img/diagrama-clases.png)
