@@ -33,4 +33,7 @@ V.6
 - Se abstrae la Clase Categoria de las clases CategoriaDigital y CategoriaFisica.
 - Se actualiza el diagrama de clases de la aplicación.
 
+V.7
+- Aplicación del patrón de diseño Singleton como la clase de configuración y Factory para la creación de Productos.
+
 ![Diagrama de Clases de nuestra Online Store.](img/diagrama-clases.png)
