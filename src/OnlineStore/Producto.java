@@ -35,12 +35,21 @@ public class Producto {
         this.stock = 1;
     }
 
+    public Producto(int id, String nombre, float precio){
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = "Producto con nombre y precio";
+        this.precio = precio;
+        this.categoria = setId(10);
+        this.stock = 1;
+    }
+
     public Producto(String nombre, float precio){
         this.id = 0;
         this.nombre = nombre;
         this.descripcion = "Producto con nombre y precio";
         this.precio = precio;
-        this.categoria = setId(10);
+        this.categoria = setId(19);
         this.stock = 1;
     }
 

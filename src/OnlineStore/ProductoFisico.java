@@ -23,6 +23,15 @@ public class ProductoFisico extends Producto{
         this.pesoKG = 0;
     }
 
+    public ProductoFisico(int id, String nombre, float precio) {
+        super(id, nombre, precio);
+        this.altoCM = 0;
+        this.largoCM = 0;
+        this.anchoCM = 0;
+        this.pesoKG = 0;
+    }
+
+
     public float getAltoCM() {
         return altoCM;
     }

@@ -18,6 +18,12 @@ public class ProductoDigital extends Producto {
         this.pesoMB = 0;
     }
 
+    public ProductoDigital(int id, String nombre, float precio){
+        super(id, nombre, precio);
+        this.formatoArchivo = "FAC";
+        this.pesoMB = 20;
+    }
+
 
 
     public String getFormatoArchivo() {
