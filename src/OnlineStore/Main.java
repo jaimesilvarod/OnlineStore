@@ -10,8 +10,8 @@ public class Main {
 
         System.out.println("\n////////////////////////CLASES BASE//////////////////////////\n");
         // Definimos los objetos
-        Producto prComputadora, prTV, prCelular;
-        Categoria ctElectrodomesticos, ctTecnologia;
+        Producto prComputadora, prTV, prCelular, prCurso;
+        Categoria ctElectrodomesticos, ctTecnologia, ctCurso;
         //Otros Objetos de Usuario
         Usuario usAdmin, usCliente, usAdministrador;
         UsuarioAdministrador usACoach;
@@ -19,10 +19,13 @@ public class Main {
         // Inicializamos los objetos
         ctElectrodomesticos = new CategoriaFisico(1,"Electrodomésticos", "Todos los electrodomésticos de la tienda");
         ctTecnologia = new CategoriaFisico(2,"Tecnología", "Todos los productos de tecnología de la tienda");
+        ctCurso = new CategoriaDigital(3,"IA", "Cursos aplicados en Inteligencia Artificial");
 
         prComputadora = new Producto(1,"HP", "Computadora Gamer Envy 5",34, ctTecnologia,54);
         prTV = new Producto(2,"Televisor Panasonic", "Televisor QLED de 75 pulgadas",500, ctTecnologia,25);
         prCelular = new Producto(3,"iPhone","15 Pro Max",1250,ctTecnologia,15);
+
+        prCurso = new Producto(4,"IA aplicada a BigData","Curso profesional de Inteligencia Artificial aplicada al BigData",150.89f,ctCurso,1000);
 
         System.out.println("\n////////////////////////HERENCIA//////////////////////////\n");
 
@@ -88,5 +91,54 @@ public class Main {
         parametrosProductoFisico.put("Nombre", "Televisor LG");
         parametrosProductoFisico.put("precio", "400");
         Producto productoFFisico = ProductoFactory.crearProducto("Físico", parametrosProductoFisico);
+
+        System.out.println(productoFDigital.getDetalles());
+        System.out.println(productoFFisico.getDetalles());
+
+        System.out.println("\n////////////////////////OBSERVER//////////////////////////\n");
+
+        CuentaBancaria cuentaBancaria = new CuentaBancaria();
+
+        MovimientoBancario gasto1 = new MovimientoBancario("Comisión",45.3d);
+        MovimientoBancario gasto2 = new MovimientoBancario("Impuesto",19.2d);
+        MovimientoBancario gasto3 = new MovimientoBancario("Compensación",0.48d);
+
+        cuentaBancaria.addObserver(gasto1);
+        cuentaBancaria.addObserver(gasto2);
+        cuentaBancaria.addObserver(gasto3);
+
+        cuentaBancaria.agregarMonto(1000d);
+
+        System.out.println(gasto1.toString());
+        System.out.println(gasto2.toString());
+        System.out.println(gasto3.toString());
+
+        System.out.println("\n//////////////////OBSERVER PARA INVENTARIO///////////////////\n");
+
+        InventarioObservable inventario = new InventarioObservable();
+        MovimientoInventario movimiento = new MovimientoInventario();
+
+        // Agregar el observador al inventario
+        inventario.addPropertyChangeListener(movimiento);
+
+        // Agregar productos y observar cambios
+        System.out.println("Agregando Producto A al inventario.");
+        inventario.agregarProducto("Producto A");
+        System.out.println("Estado actual del inventario: " + inventario.getProductos());
+
+        System.out.println("Agregando Producto B al inventario.");
+        inventario.agregarProducto("Producto B");
+        System.out.println("Estado actual del inventario: " + inventario.getProductos());
+
+        // Remover productos y observar cambios
+        System.out.println("Removiendo Producto A del inventario.");
+        inventario.removerProducto("Producto A");
+        System.out.println("Estado actual del inventario: " + inventario.getProductos());
+
+        System.out.println("Removiendo Producto C del inventario (producto no existente).");
+        inventario.removerProducto("Producto C");
+        System.out.println("Estado actual del inventario: " + inventario.getProductos());
+
     }
+
 }

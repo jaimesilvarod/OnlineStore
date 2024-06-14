@@ -9,7 +9,12 @@ public class UsuarioAdministrador extends Usuario {
             this.tipoAcceso = tipoAcceso;
         }
 
-        public String getTipoAcceso(){
+    public UsuarioAdministrador(int id, String nombre, String email, String contrasena, String rol) {
+        super(id, nombre, email, contrasena, rol);
+        this.tipoAcceso = "Del más complicado.";
+    }
+
+    public String getTipoAcceso(){
             return tipoAcceso;
         }
 

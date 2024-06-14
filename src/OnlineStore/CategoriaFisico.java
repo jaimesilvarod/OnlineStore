@@ -6,7 +6,6 @@ public class CategoriaFisico extends Categoria{
 
     public CategoriaFisico(int id, String name, String descripcion) {
         super(id, name, descripcion);
-        this.identificador = "F";
     }
 
     @Override
