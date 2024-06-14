@@ -36,5 +36,6 @@ V.6
 V.7
 - Aplicación del patrón de diseño Singleton como la clase de configuración y Factory para la creación de Productos.
 - Aplicación del patrón de diseño Observador en el ejemplo de la clase con CuentaBancaria y MovimientoBancario; además, se crea la forma no obsoleta del patrón en una clase InventarioObservable y su clase que observa MovimientoInventario.
+- Corrección del campo común "identificador" en las clases de CategoriaDigital y CategoriaFisica abstraído en la clase Categoría.
 
 ![Diagrama de Clases de nuestra Online Store.](img/diagrama-clases.png)
