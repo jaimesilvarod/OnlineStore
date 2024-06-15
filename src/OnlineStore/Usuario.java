@@ -14,7 +14,7 @@ public class Usuario {
     public Usuario(int id, String nombre, String email, String contrasena, String rol) {
         this.id = id;
         this.nombre = nombre;
-        this.email = email;
+        setEmail(email); // Aquí se verifica el correo
         this.contrasena = contrasena;
         this.rol = rol;
     }
@@ -41,10 +41,10 @@ public class Usuario {
 
     public void setEmail(String email) {
         String CORREO_PERMITIDO = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]{2,})+$";
-        if(elCorreoEsValido(email, CORREO_PERMITIDO)){
+        if (elCorreoEsValido(email, CORREO_PERMITIDO)) {
             this.email = email;
-        }else{
-            System.out.println("El formato de correo electrónico es incorrecto.");
+        } else {
+            throw new IllegalArgumentException("El formato de correo electrónico es incorrecto.");
         }
     }
 
@@ -70,19 +70,19 @@ public class Usuario {
         this.rol = rol;
     }
 
-    public void registrarUsuario(){
+    public void registrarUsuario() {
         System.out.println("Usuario Registrado");
     }
 
-    public void iniciarSesion(){
+    public void iniciarSesion() {
         System.out.println("Sesión Iniciada");
     }
 
-    public void actualizarPerfil(){
+    public void actualizarPerfil() {
         System.out.println("Perfil Actualizado");
     }
 
-    public void cerrarSesion(){
+    public void cerrarSesion() {
         System.out.println("Sesión cerrada con éxito");
     }
 

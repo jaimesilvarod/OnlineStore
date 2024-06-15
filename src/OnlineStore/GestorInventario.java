@@ -12,10 +12,10 @@ public abstract class GestorInventario {
         return cantidad;
     }
 
-    public abstract void anadirProducto(String producto, int cantidad);
+    public abstract void anadirProducto(String producto, int cantidad) throws GestorInventarioException;
 
-    public abstract void eliminarProducto(String producto);
+    public abstract void eliminarProducto(String producto) throws GestorInventarioException;
 
-    public abstract void actualizarStock(String producto, int nuevaCantidad);
-
+    public abstract void actualizarStock(String producto, int nuevaCantidad) throws GestorInventarioException;
 }
+

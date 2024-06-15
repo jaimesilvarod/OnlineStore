@@ -56,14 +56,31 @@ public class Main {
         System.out.println("///////////////////////////////////////////////////////////");
 
         System.out.println("\n////////////////////////ABSTRACCIÓN//////////////////////////\n");
+
         GestorInventario inventarioDigital = new InventarioDigital(23);
         GestorInventario inventarioFisico = new InventarioFisico(33);
 
-        inventarioDigital.anadirProducto("Suscripción curso Java", 55);
-        inventarioFisico.anadirProducto("Libro de Java", 12);
+        try {
+            inventarioDigital.anadirProducto("Suscripción curso Java", 55);
+        } catch (GestorInventarioException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            inventarioFisico.anadirProducto("Libro de Java", 12);
+        } catch (GestorInventarioException e) {
+            throw new RuntimeException(e);
+        }
 
-        inventarioDigital.actualizarStock("Suscripción curso Java", 23);
-        inventarioFisico.actualizarStock("Libro de Java", 15);
+        try {
+            inventarioDigital.actualizarStock("Suscripción curso Java", 23);
+        } catch (GestorInventarioException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            inventarioFisico.actualizarStock("Libro de Java", 15);
+        } catch (GestorInventarioException e) {
+            throw new RuntimeException(e);
+        }
 
         System.out.println("El inventario Digital tiene en stock " + inventarioDigital.getCantidad() + " productos.");
         System.out.println("El inventario Físico tiene en stock " + inventarioFisico.getCantidad() + " productos.");
@@ -138,6 +155,20 @@ public class Main {
         System.out.println("Removiendo Producto C del inventario (producto no existente).");
         inventario.removerProducto("Producto C");
         System.out.println("Estado actual del inventario: " + inventario.getProductos());
+
+        System.out.println("\n//////////////////MANEJO DE EXCEPCIONES///////////////////\n");
+
+        SistemadePago pago = new PagoPayPal();
+        try {
+            pago.iniciarPago();
+            pago.verificarPago();
+            pago.confirmarPago();
+            System.out.println("Pago procesado con éxito.");
+        } catch (PagoFallidoException e) {
+            System.out.println("Excepción capturada: " + e.getMessage() + " (Código de error: " + e.getCodigoError() + ")");
+        } catch (SistemadePagoException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

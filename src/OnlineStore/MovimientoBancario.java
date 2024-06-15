@@ -45,7 +45,7 @@ public class MovimientoBancario implements Observer {
 
     @Override
     public String toString(){
-        return "Gasto Bancario{" +
+        return "Movimiento Bancario{" +
         "tipo: " + tipo + "\n" +
         ", tasaCoeficiente: " + tasaCoeficiente + "\n" +
         ", total calculado: " + totalCalculado + "\n" +
