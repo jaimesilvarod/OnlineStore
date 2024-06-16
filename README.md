@@ -40,5 +40,6 @@ V.7
 
 V.8
 - Manejo de excepciones en todos los llamados desde el Main() y excepciones personalizadas con las clases personalizadas GestorInventarioException, PagoFallidoException y SistemadePagoException.
+- Creación de Test para las clases de Producto, Carrito de Compra, Gestor de Inventario y Usuario.
 
 ![Diagrama de Clases de nuestra Online Store.](img/diagrama-clases.png)
